@@ -1,6 +1,6 @@
 import classes from './HeaderCartButton.module.css';
 
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import CartContext from '../../store/cart-context';
 
 const HeaderCartButton = (props) => {
@@ -12,9 +12,6 @@ const HeaderCartButton = (props) => {
     return prev + curr;
   }, 0);
 
-  useEffect(() => {
-    console.log(items.items);
-  });
   return (
     <button className={classes.button} onClick={props.onClick}>
       <span className={classes.icon}>
