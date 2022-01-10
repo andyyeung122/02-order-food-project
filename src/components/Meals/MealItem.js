@@ -1,9 +1,20 @@
 import classes from './MealItem.module.css';
 
+import { useContext } from 'react';
 import MealItemForm from './MealItemForm';
+import CartContext from '../../store/cart-context';
 
 const Mealitem = (props) => {
-  const addToCartHandler = () => {};
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (amount) => {
+    cartCtx.addItem({
+      id: props.id,
+      name: props.name,
+      amount: amount,
+      price: props.price,
+    });
+  };
 
   return (
     <li className={classes.meal}>
