@@ -3,6 +3,8 @@ import classes from './MealItem.module.css';
 import MealItemForm from './MealItemForm';
 
 const Mealitem = (props) => {
+  const addToCartHandler = () => {};
+
   return (
     <li className={classes.meal}>
       <div>
@@ -11,7 +13,7 @@ const Mealitem = (props) => {
         <div className={classes.price}>{props.price}</div>
       </div>
       <div>
-        {/* <MealItemForm id={props.id} onAddToCart={addToCartHandler} /> */}
+        <MealItemForm id={props.id} onAddToCart={addToCartHandler} />
       </div>
     </li>
   );
